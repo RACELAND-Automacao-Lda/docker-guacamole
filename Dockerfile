@@ -23,7 +23,7 @@ WORKDIR ${GUACAMOLE_HOME}
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     libcairo2-dev libjpeg62-turbo-dev libpng-dev \
-    libossp-uuid-dev libavcodec-dev libavutil-dev automake buils-essential libtool \
+    libossp-uuid-dev libavcodec-dev libavutil-dev automake build-essential libtool \
     libswscale-dev freerdp2-dev libfreerdp-client2-2 libpango1.0-dev \
     libssh2-1-dev libtelnet-dev libvncserver-dev git \
     libpulse-dev libssl-dev libvorbis-dev libwebp-dev libwebsockets-dev \
