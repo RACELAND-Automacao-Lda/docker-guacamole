@@ -23,7 +23,7 @@ WORKDIR ${GUACAMOLE_HOME}
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     libcairo2-dev libjpeg62-turbo-dev libpng-dev \
-    libossp-uuid-dev libavcodec-dev libavutil-dev \
+    libossp-uuid-dev libavcodec-dev libavutil-dev automake \
     libswscale-dev freerdp2-dev libfreerdp-client2-2 libpango1.0-dev \
     libssh2-1-dev libtelnet-dev libvncserver-dev git \
     libpulse-dev libssl-dev libvorbis-dev libwebp-dev libwebsockets-dev \
@@ -37,6 +37,7 @@ RUN [ "$ARCH" = "amd64" ] && ln -s /usr/local/lib/freerdp /usr/lib/x86_64-linux-
 # Install guacamole-server
 RUN git clone https://github.com/apache/guacamole-server \
   && cd guacamole-server \
+  && automake \
   && ./configure --enable-allow-freerdp-snapshots \
   && make -j$(getconf _NPROCESSORS_ONLN) \
   && make install \
