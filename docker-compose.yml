@@ -6,8 +6,8 @@ services:
       EXTENSIONS: auth-ldap,auth-duo
     image: oznu/guacamole
     ports:
-    - 8080:8080
+    - 9600:8080
     volumes:
-    - /data/guacamole/config:/config
-    - /data/guacamole/record:/record
+    - /guacamole/data/config:/config
+    - /guacamole/data/record:/record
     restart: always
